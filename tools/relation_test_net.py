@@ -28,7 +28,7 @@ def main():
     parser = argparse.ArgumentParser(description="PyTorch Object Detection Inference")
     parser.add_argument(
         "--config-file",
-        default="/private/home/fmassa/github/detectron.pytorch_v2/configs/e2e_faster_rcnn_R_50_C4_1x_caffe2.yaml",
+        default="./configs/e2e_relation_X_101_32_8_FPN_1x.yaml",
         metavar="FILE",
         help="path to config file",
     )
@@ -52,6 +52,7 @@ def main():
         )
         synchronize()
 
+    print(args.config_file)
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
     cfg.freeze()
@@ -73,7 +74,7 @@ def main():
 
     output_dir = cfg.OUTPUT_DIR
     checkpointer = DetectronCheckpointer(cfg, model, save_dir=output_dir)
-    _ = checkpointer.load(cfg.MODEL.WEIGHT)
+    _ = checkpointer.load("./checkpoints/model_0028000.pth")
 
     iou_types = ("bbox",)
     if cfg.MODEL.MASK_ON:

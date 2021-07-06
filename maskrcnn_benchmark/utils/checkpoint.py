@@ -59,6 +59,9 @@ class Checkpointer(object):
             # no checkpoint could be found
             self.logger.info("No checkpoint found. Initializing model from scratch")
             return {}
+
+        f = "./checkpoints/model_0028000.pth"    
+        print(f)
         self.logger.info("Loading checkpoint from {}".format(f))
         checkpoint = self._load_file(f)
         self._load_model(checkpoint, load_mapping)

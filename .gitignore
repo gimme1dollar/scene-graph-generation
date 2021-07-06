@@ -12,10 +12,10 @@ dist/
 **/.ipynb_checkpoints/
 
 # checkpoint
-checkpoint/
+checkpoints*/
 
 # dataset
-datasets/vg/
+datasets/
 *.png
 *.jpg
 *.jpeg
@@ -25,6 +25,12 @@ datasets/vg/
 *.swo
 *.swp
 *~
+
+# glove
+glove/
+
+# output
+output/
 
 # Pycharm editor settings
 .idea
