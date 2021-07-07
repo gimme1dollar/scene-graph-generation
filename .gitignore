@@ -15,7 +15,11 @@ dist/
 checkpoints*/
 
 # dataset
-datasets/
+datasets/vg/*
+datasets/custom_img/*
+datasets/custom_video/*.mp4
+datasets/custom_video/*.h5
+datasets/custom_video/images/
 *.png
 *.jpg
 *.jpeg
